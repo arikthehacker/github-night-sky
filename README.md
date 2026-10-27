@@ -10,6 +10,8 @@ a chrome extension that puts a soft, sparkly nighttime sky behind github. indigo
 git clone https://github.com/arikthehacker/github-night-sky.git
 ```
 
+no git? grab the zip from [releases](https://github.com/arikthehacker/github-night-sky/releases/latest) and unzip it.
+
 1. open `chrome://extensions`
 2. turn on **developer mode** (top right)
 3. click **load unpacked** and pick the `github-night-sky` folder
