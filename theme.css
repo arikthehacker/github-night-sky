@@ -1,0 +1,74 @@
+/* Recolors GitHub's dark theme tokens so the sky in stars.css shows through.
+   theme.js keeps GitHub in dark mode, so syntax, diff and alert colors stay readable. */
+
+html {
+  background: #1c1937 !important;
+  color-scheme: dark !important;
+}
+
+body {
+  background: transparent !important;
+}
+
+/* Custom properties inherit, so setting them on each theme scope is enough. */
+:root,
+[data-color-mode] {
+  --bgColor-default: transparent !important;
+  --bgColor-muted: #ffffff0a !important;
+  --bgColor-inset: #0e0c2059 !important;
+  --bgColor-accent-muted: #c8b4ff1f !important;
+  --bgColor-accent-emphasis: #8f7ae0 !important;
+
+  --fgColor-default: #ece8f6 !important;
+  --fgColor-muted: #b3acd0 !important;
+  --fgColor-accent: #f3d9a4 !important;
+
+  --borderColor-default: #dcd2ff24 !important;
+  --borderColor-muted: #dcd2ff17 !important;
+  --borderColor-accent-emphasis: #f3d9a4 !important;
+
+  --overlay-bgColor: #2a2650 !important;
+  --button-default-bgColor-rest: #ffffff0f !important;
+  --button-default-bgColor-hover: #ffffff1c !important;
+  --button-default-borderColor-rest: #dcd2ff29 !important;
+  --control-bgColor-rest: #ffffff0d !important;
+
+  /* older names some GitHub pages still read */
+  --color-canvas-default: transparent !important;
+  --color-canvas-subtle: #ffffff0a !important;
+  --color-canvas-inset: #0e0c2059 !important;
+  --color-canvas-overlay: #2a2650 !important;
+  --color-border-default: #dcd2ff24 !important;
+  --color-border-muted: #dcd2ff17 !important;
+
+  /* contribution graph in starlight tones */
+  --contribution-default-bgColor-0: #ffffff0d !important;
+  --contribution-default-bgColor-1: #5c4f8f !important;
+  --contribution-default-bgColor-2: #8a6fae !important;
+  --contribution-default-bgColor-3: #c79bb8 !important;
+  --contribution-default-bgColor-4: #f3d9a4 !important;
+  --contribution-default-borderColor-0: transparent !important;
+  --contribution-default-borderColor-1: transparent !important;
+  --contribution-default-borderColor-2: transparent !important;
+  --contribution-default-borderColor-3: transparent !important;
+  --contribution-default-borderColor-4: transparent !important;
+}
+
+/* Cards get a translucent fill. No blur here: blurring every card costs a lot while scrolling. */
+.Box,
+.timeline-comment {
+  background-color: #1e1a3e73 !important;
+}
+
+/* The header is the one blurred surface. */
+.AppHeader {
+  background: #1a173480 !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Sticky bars need a solid fill or the page scrolls visibly underneath them. */
+.position-sticky,
+.file-header,
+[class*="diffHeaderWrapper"] {
+  background-color: #221e46f0 !important;
+}
